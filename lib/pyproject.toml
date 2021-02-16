@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "weather-bot"
+version = "0.1.0"
+description = ""
+authors = ["Roberto Guillén"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+json-serde = "^0.0.11"
+boto3 = "^1.17.7"
+requests = "^2.25.1"
+ndg-httpsclient = "^0.5.1"
+pyOpenSSL = "^20.0.1"
+pyasn1 = "^0.4.8"
+pyTelegramBotAPI = "^3.7.6"
+
+[tool.poetry.dev-dependencies]
+jedi = "^0.18.0"
+epc = "^0.0.5"
+ipython = "^7.20.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
