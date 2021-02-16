@@ -12,7 +12,8 @@ export interface WeatherBotStackProps extends cdk.StackProps {
 export class WeatherBotStack extends cdk.Stack {
     readonly props: WeatherBotStackProps
     
-    constructor(scope: cdk.Construct, id: string, props: WeatherBotStackProps) {
+    constructor(scope: cdk.Construct, id: string,
+		props: WeatherBotStackProps) {
 	super(scope, id, props);
 	this.props = props;
 
@@ -46,8 +47,8 @@ export class WeatherBotStack extends cdk.Stack {
 		"OPENWEATHERMAP_API_KEY": this.props.weatherApiToken,
 		"DDB_TABLE": weatherBotTable.tableName
 	    },
-	    timeout: cdk.Duration.seconds(30),
-	    memorySize: 192
+	    timeout: cdk.Duration.seconds(90),
+	    memorySize: 256
 	});
 	const executionRole = fun.role!;
 	weatherBotTable.grantReadWriteData(executionRole);
